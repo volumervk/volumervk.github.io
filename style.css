@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #000000; /* Light grey background */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.background-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('volume.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*filter: blur(5px);:*/
+    z-index: -1; /* Ensure it stays behind the content */
+}
+
+.content {
+    position: absolute;
+    top: 50%; /* Adjust top as necessary */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Full width to center align the button */
+    text-align: center;
+}
+
+/* Additional CSS to make the overlaying content visible */
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+/* Styling the button */
+.pretty-button {
+    background-color: #808080; /* Gold background to match the flyer */
+    color: #000; /* Dark text for contrast */
+    padding: 20px 40px; /* Larger padding for a bigger button */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px; /* Larger font size for the button text */
+    font-family: 'Dancing Script', cursive; /* A font similar to the one used in the flyer */
+    margin: 4px 2px;
+    margin-top: 10vh; /* Push down from the top of the viewport */
+    cursor: pointer;
+    border: 2px solid #000; /* Adding a white border for elegance */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase; /* Stylistic choice to match flyer's emphasis */
+}
+
+.pretty-button:hover {
+    background-color: #A0A0A0; /* A lighter gold on hover for interaction */
+    color: #000;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Pseudo-elements for additional effects */
+.pretty-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #555, #999, #808080); /* Gradient with various shades of gold */
+    transition: all 0.4s;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.pretty-button:hover::before {
+    left: 100%;
+}
+
+.logo-container {
+    text-align: center; /* Center-align the logo */
+    padding-top: 20px; /* Add some space around the logo */
+}
+
+.logo {
+    width: 400px; /* Fixed width */
+    height: auto; /* Fixed height, adjust as needed */
+}
+
+@media (max-width: 600px) {
+    .logo {
+        max-width: 80%; /* Allow logo to be wider on smaller screens */
+    }
+    /* Smaller screens, typically mobile devices */
+    .pretty-button {
+        padding: 18px 0; /* Top and bottom padding */
+        width: 90%; /* Full width with a little margin on small screens */
+        margin: 10px 5%; /* Centered with equal margin on both sides */
+    }
+}
+
+/* Add this to your existing style.css */
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Adjust as needed for spacing */
+}
