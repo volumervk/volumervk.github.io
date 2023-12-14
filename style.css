@@ -108,6 +108,10 @@ body {
         width: 90%; /* Full width with a little margin on small screens */
         margin: 10px 5%; /* Centered with equal margin on both sides */
     }
+    
+    .background-container {
+        background-image: url('single.png');
+    }
 }
 
 /* Add this to your existing style.css */
